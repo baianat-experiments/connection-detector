@@ -1,6 +1,6 @@
 module.exports = {
     "extends": "standard",
     "rules": {
-        "semi": "always"
+        "semi": [2, "always"]
     }
 };

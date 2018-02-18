@@ -32,13 +32,13 @@ export default class Down {
   }
 
   _createTimer () {
-    return new Promise((_, reject) => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
         const error = new Error('Timed out');
         error.isTimeout = true;
         reject(error);
       }, TIMEOUT);
-    })
+    });
   }
 
   _confirmDownState () {
@@ -52,8 +52,8 @@ export default class Down {
         redirect: 'manual'
       })
     ])
-    .then(() => false)
-    .catch(err => !!err.isTimeout);
+      .then(() => false)
+      .catch(err => !!err.isTimeout);
   }
 
   on (eventName, callback) {
