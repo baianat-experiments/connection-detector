@@ -29,6 +29,9 @@ async function build () {
 
   fs.writeFileSync(path.join(config.outputFolder, 'down.min.js'), uglify.minify(code, config.uglifyOptions).code);
   console.log(chalk.green('Output File:') + ' down.min.js');
+
+  fs.writeFileSync(path.join(__dirname, '../docs/', 'down.js'), code);
+  console.log(chalk.green('Docs File:') + ' down.js');
 }
 
 build();
