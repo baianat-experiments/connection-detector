@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Down.js</title>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body, .app__container {
+      color: white;
+    }
+
+    .app__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      background-color: #36B1BF;
+    }
+
+    .app__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app__status {
+      font-size: 40px;
+      margin: 20px;
+      padding: 10px;
+    }
+
+    .app__status.is-offline {
+      background-color: #F2385A;
+    }
+
+    .app__status.is-online {
+      background-color: #96CA2D;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app__container">
+    <div class="app__header">
+      <h1>Down.js</h1>
+      <p>
+        Detect user connection status
+      </p>
+    </div>
+    <b-online :is-online="isOnline"></b-online>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script src="../dist/down.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
